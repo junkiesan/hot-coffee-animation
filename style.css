@@ -1,0 +1,152 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #607d8b;
+}
+
+.container {
+  position: relative;
+  top: 3.125rem;
+}
+
+.cup {
+  position: relative;
+  width: 17.5rem;
+  height: 18.75rem;
+  background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+  border-bottom-left-radius: 45%;
+  border-bottom-right-radius: 45%;
+
+}
+
+.top {
+  position: absolute;
+  top: -1.875rem;
+  left: 0;
+  width: 100%;
+  height: 3.75rem;
+  background: linear-gradient(to right, #f9f9f9, #d9d9d9);
+  border-radius: 50%;
+}
+
+.circle {
+  position: absolute;
+  top: 0.3125rem;
+  left: 0.625rem;
+  width: calc(100% - 1.25rem);
+  height: 3.125rem;
+  background: linear-gradient(to left, #f9f9f9, #d9d9d9);
+  border-radius: 50%;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+.coffee {
+  position: absolute;
+  top: 1.25rem;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#4B1F0E, #5a210b);
+  border-radius: 50%;
+}
+
+.handle {
+  position: absolute;
+  right: -4.375rem;
+  top: 2.5rem;
+  width: 10rem;
+  height: 11.25rem;
+  border: 1.5625rem solid #dcdcdc;
+  border-left: 1.5625rem solid transparent;
+  border-bottom: 1.5625rem solid transparent;
+  border-radius: 50%;
+  transform:rotate(42deg);
+}
+
+.plate {
+  position: absolute;
+  bottom: -3.125rem;
+  left: 50%;
+  transform: translate(-50%);
+  width: 31.25rem;
+  height: 12.5rem;
+  background: linear-gradient(to right, #f9f9f9, #e7e7e7);
+  border-radius: 50%;
+  box-shadow:0 2.1875rem 2.1875rem rgba(0, 0, 0, 0.2);
+}
+
+.plate::before {
+  content: "";
+  position: absolute;
+  top: 0.625rem;
+  left: 0.625rem;
+  right: 0.625rem;
+  bottom: 0.625rem;
+  border-radius: 50%;
+  background: linear-gradient(to left, #e7e7e7, #f9f9f9);
+}
+
+.plate::after {
+  content: "";
+  position: absolute;
+  top: 1.875rem;
+  left: 1.875rem;
+  right: 1.875rem;
+  bottom: 1.875rem;
+  background: radial-gradient(rgba(0,0,0,0.2) 25%, transparent, transparent);
+  border-radius: 50%;
+}
+
+.vapour {
+  position: relative;
+  display: flex;
+  z-index: 1;
+  padding: 0 1rem;
+}
+
+.vapour span {
+  position: relative;
+  bottom: 3.125rem;
+  display: block;
+  margin: 0 0.0625rem 3.125rem;
+  min-width: 0.625rem;
+  height: 7.5rem;
+  background: #fff;
+  border-radius: 50%;
+  animation: animate 5s linear infinite;
+  opacity: 0;
+  filter: blur(0.625rem);
+  animation-delay: calc(var(--i) * -0.5s);
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) scaleX(1);
+    opacity: 0;
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translateY(-9.375rem) scaleX(5);
+  }
+
+  95% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(-18.75rem) scaleX(10);
+  }
+}
